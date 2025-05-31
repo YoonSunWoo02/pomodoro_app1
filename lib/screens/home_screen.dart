@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int totalPomodoros = 0;
   late Timer timer; //늦게 초기화 해도 되는데 무조건 나중에 해야함
 
-  void onTick(Timer timer) {
+  void onTick1(Timer timer) {
     if (totalSeconds == 0) {
       setState(() {
         totalPomodoros += 1;
@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void onStartPressed() {
     timer = Timer.periodic(
       Duration(seconds: 1),
-      onTick,
+      onTick1,
     ); //설정한 시간 주기마다 오른쪽이 실행됨됨
 
     setState(() {
